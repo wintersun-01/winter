@@ -103,7 +103,11 @@
 										<p>Local Evacuation sites in the city of Casey catchment</p>
 									</div>
 									<div class="meta">
-										<time class="published" datetime="2026-01-19">January 26, 2026</time>
+										<time class="published" datetime="2026-01-19"><span id="date"></span>
+											<script>
+												const now = new Date();
+												document.getElementbyID('date').textContent = now.toDateString();
+											</script>
 										<a href="#" class="author"><span class="name">Allie Rhodes</span><img src="images/avatar.jpg" alt="" /></a>
 									</div>
 								</header>
@@ -644,6 +648,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 	</body>
 
 </html>
+
 
 
 
