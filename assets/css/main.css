@@ -1,6 +1,6 @@
 @import url(fontawesome-all.min.css);
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Raleway:400,800,900");
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700");
+@import url("https://fonts.googleapis.com/css2?family=Inter:400;500;600;700");
 /*
 	Future Imperfect by HTML5 UP
 	html5up.net | @ajlkn
@@ -118,8 +118,8 @@ input, select, textarea {
 
 	body, input, select, textarea {
 		color: #646464;
-		font-family: "Raleway", Calibri, sans-serif;
-		font-size: 14pt;
+		font-family: "Inter", Raleway, sans-serif;
+		font-size: 12pt;
 		font-weight: 400;
 		line-height: 1.75;
 	}
@@ -3610,5 +3610,6 @@ input, select, textarea {
 			}
 
 		}
+
 
 
