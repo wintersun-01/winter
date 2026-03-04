@@ -117,67 +117,6 @@
 								</footer>
 							</article>
 					</div>
-
-						<!-- Post -->
-							<article class="post">
-								<header>
-									<div class="title">
-										<h2><a>SQL</a></h2>
-										<p>A sql script for...</p>
-									</div>
-									<div class="meta">
-										<time class="published" datetime="2026-03-02">March 02, 2026</time>
-										<a href="#" class="author"><span class="name">Allie Rhodes</span><img src="images/avatar.jpg" alt="" /></a>
-									</div>
-								</header>
-								<!--<span style="font-weight:300; font-family:Raleway, sans serif; font-size: 12px; line-height: 3; letter-spacing:0.1em;"> [ INTERACTIVE ] </span>  -->
-								  <link rel="stylesheet" href="assets/js/prism.css">
-  									<script src="assets/js/prism.js"></script>
-  									<style> 
-					   				.code-block { max-width: 100%; flex-shrink: 1; min-width: 0; overflow-x: auto; padding: 8px; border-radius: 4px; box-sizing: border-box;
-												}
-  									</style>
- 
-									<details onclick="loadOnce(event, 'code-sql', 'code_samples/sql1.sql')">
-    								<summary><h4>Show SQL script</h4></summary>
-    								<pre class="code-block language-sql"><code id="code-sql"></code></pre>
-  									</details>
-								  <script>   
- 									 async function loadOnce(e, targetId, filePath) {
-    								// Prevent details default toggle behavior
-    								e.preventDefault();
-   									e.stopPropagation();
-        
-									const codeEl = document.getElementById(targetId);
-    								const pre = codeEl.parentElement.parentElement; // <details>
-    
-    								if (codeEl.dataset.loaded === "true") return;  // only fetch first time
-
-    								try {
-      									const resp = await fetch(filePath);
-      										if (!resp.ok) throw new Error(resp.statusText);
-      									const text = await resp.text();
-      									codeEl.textContent = text;
-      									Prism.highlightElement(codeEl);  // ← ADD PRISM HIGHLIGHTING
-      									codeEl.dataset.loaded = "true";
-   									 } catch (err) {
-      										codeEl.textContent = "Error loading file: " + err.message;
-    										}
-  											}
-  									</script>
-											
-								<footer>
-									<!--<ul class="actions">
-										<li><a href="single.html" class="button large">tbc.</a></li>
-									</ul> -->
-									<ul class="stats">
-										<li><a href="#">General</a></li>
-										<li><a href="#" class="icon solid fa-heart">28</a></li>
-										<li><a href="#" class="icon solid fa-comment">128</a></li>
-									</ul>
-								</footer>
-							</article>
-
 						
 				<!-- Post -->
 							<article class="post">
@@ -245,7 +184,73 @@
 								</footer>
 							</article>
 
+
+				<!-- Post -->
+							<article class="post">
+								<header>
+									<div class="title">
+										<h2><a>SQL2 </a></h2>
+										<p>A sql script for...</p>
+									</div>
+									<div class="meta">
+										<time class="published" datetime="2026-03-02">March 02, 2026</time>
+										<a href="#" class="author"><span class="name">Allie Rhodes</span><img src="images/avatar.jpg" alt="" /></a>
+									</div>
+								</header>
+							 	<!--<span style="font-weight:300; font-family:Raleway, sans serif; font-size: 12px; line-height: 3; letter-spacing:0.1em;"> [ INTERACTIVE ] </span> --> 
+
+								
+								<!-- Prism File -->
+								<link rel="stylesheet" href="assets/js/prism.css">
+								<script src="assets/js/prism.js"></script>
+					           
+								<style>
+									.code-block { max-width: 100%; flex-shrink: 1; min-width: 0; overflow-x: auto; padding: 8px; border-radius: 4px; box-sizing: border-box;}
+								</style>
+
+								<!-- SQL	File -->
+									<details onclick="showCode('sql1', 'code_samples/sql1.sql')">
+ 										 <summary>Show SQL</summary>
+ 									 <pre class="code-block language-sql"><code id="sql1"></code></pre>
+									</details>
+
+
+									<script>   
+										async function showCode(targetId, filePath) {
+  										const codeEl = document.getElementById(targetId);
+  										const pre = codeEl.parentElement;
+
+  									if (codeEl.dataset.loaded === "true") {
+    								pre.style.display = pre.style.display === "none" ? "block" : "none";
+    								return;
+  									}
+      
+  									try {
+    								const resp = await fetch(filePath);
+    								const text = await resp.text();
+    								codeEl.textContent = text;
+    								Prism.highlightElement(codeEl);  
+    								pre.style.display = "block";
+    								codeEl.dataset.loaded = "true";
+ 									 } catch (e) {
+    								codeEl.textContent = "Error: " + e.message;
+  											}
+									}
+									</script>
+
 									
+								<footer>
+									<!--<ul class="actions">
+										<li><a href="single.html" class="button large">tbc.</a></li>
+									</ul> -->
+									<ul class="stats">
+										<li><a href="#">General</a></li>
+										<li><a href="#" class="icon solid fa-heart">28</a></li>
+										<li><a href="#" class="icon solid fa-comment">128</a></li>
+									</ul>
+								</footer>
+							</article>
+								
 				<!-- Footer -->
 					<section id="footer">
 						<ul class="icons">
